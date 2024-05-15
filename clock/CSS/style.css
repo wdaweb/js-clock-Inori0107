@@ -1,0 +1,80 @@
+html,
+body {
+	height: 100vh;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../Photos_Desktop.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+/* 主畫面 */
+/* 音樂播放 */
+.timer {
+	width: calc(50% / 3 * 2);
+	height: calc(100% / 3 * 2);
+	background: wheat;
+	border-radius: 15%;
+	position: relative;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+.timer::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: inherit;
+	width: calc(100% / 2 * 3);
+	height: calc(100% / 2 * 3);
+	background: rgba(12, 12, 12);
+	z-index: 5;
+}
+
+.clock {
+	font-family: "Share Tech Mono", monospace;
+	position: absolute;
+	bottom: 4%;
+	left: 15%;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+span {
+	font-size: 1.5rem;
+}
+#date {
+	letter-spacing: 0.1em;
+	font-size: 2rem;
+}
+#time {
+	letter-spacing: 0.1em;
+	font-size: 5rem;
+}
+/* 城堡 */
+.castle {
+	width: 55%;
+	height: 500px;
+	/* background: rgba(88, 65, 135, 0.3); */
+	position: absolute;
+	top: 5%;
+	right: 2%;
+}
+.castle iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.music {
+	position: absolute;
+	bottom: 1px;
+	right: 5%;
+}

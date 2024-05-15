@@ -1,0 +1,63 @@
+.piano {
+	width: 750px;
+	height: 300px;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 0.5rem;
+	transition: all 0.1s ease;
+	box-sizing: border-box;
+	user-select: none;
+	opacity: 0;
+}
+.keys {
+	margin: auto;
+	width: 70px;
+	height: 300px;
+	background: #fff;
+	border: 4px solid black;
+	border-radius: 0.5rem;
+	transition: all 0.1s ease;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.sharps {
+	width: 55px;
+	height: 200px;
+	background: #000;
+	border: 4px solid black;
+	border-radius: 0.5rem;
+	transition: all 0.1s ease;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	/* z-index: 2; */
+}
+#C3s {
+	left: 44px;
+}
+#D3s {
+	left: 118px;
+}
+#F3s {
+	left: 266px;
+}
+#G3s {
+	left: 340px;
+}
+#A3s {
+	left: 414px;
+}
+#C4s {
+	left: 562px;
+}
+#D4s {
+	left: 636px;
+}
+.playing {
+	transform: scale(0.95);
+	border-color: #028ae9;
+	box-shadow: 0 0 1rem #028ae9;
+}

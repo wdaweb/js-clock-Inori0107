@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			html {
+				font-family: "Noto Serif", serif;
+				-webkit-font-smoothing: antialiased;
+			}
+			.piano {
+				width: 750px;
+				height: 300px;
+				position: absolute;
+				top: 60%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 0.5rem;
+				transition: all 0.1s ease;
+				box-sizing: border-box;
+				user-select: none;
+			}
+			.keys {
+				margin: auto;
+				width: 70px;
+				height: 300px;
+				background: #fff;
+				border: 4px solid black;
+				border-radius: 0.5rem;
+				transition: all 0.1s ease;
+				display: inline-block;
+				box-sizing: border-box;
+			}
+
+			.sharps {
+				width: 55px;
+				height: 200px;
+				background: #000;
+				border: 4px solid black;
+				border-radius: 0.5rem;
+				transition: all 0.1s ease;
+				box-sizing: border-box;
+				position: absolute;
+				top: 0;
+				/* z-index: 2; */
+			}
+			#C3s {
+				left: 44px;
+			}
+			#D3s {
+				left: 118px;
+			}
+			#F3s {
+				left: 266px;
+			}
+			#G3s {
+				left: 340px;
+			}
+			#A3s {
+				left: 414px;
+			}
+			#C4s {
+				left: 562px;
+			}
+			#D4s {
+				left: 636px;
+			}
+			.playing {
+				transform: scale(0.95);
+				border-color: #028ae9;
+				box-shadow: 0 0 1rem #028ae9;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="piano">
+			<div class="keys" id="C3"></div>
+			<div class="sharps" id="C3s"></div>
+			<div class="keys" id="D3"></div>
+			<div class="sharps" id="D3s"></div>
+			<div class="keys" id="E3"></div>
+			<div class="keys" id="F3"></div>
+			<div class="sharps" id="F3s"></div>
+			<div class="keys" id="G3"></div>
+			<div class="sharps" id="G3s"></div>
+			<div class="keys" id="A3"></div>
+			<div class="sharps" id="A3s"></div>
+			<div class="keys" id="B3"></div>
+			<div class="keys" id="C4"></div>
+			<div class="sharps" id="C4s"></div>
+			<div class="keys" id="D4"></div>
+			<div class="sharps" id="D4s"></div>
+			<div class="keys" id="E4"></div>
+		</div>
+		<audio src="./piano/C3.mp3" id="C3"></audio>
+		<audio src="./piano/C#3.mp3" id="C3s"></audio>
+		<audio src="./piano/D3.mp3" id="D3"></audio>
+		<audio src="./piano/D#3.mp3" id="D3s"></audio>
+		<audio src="./piano/E3.mp3" id="E3"></audio>
+		<audio src="./piano/F3.mp3" id="F3"></audio>
+		<audio src="./piano/F#3.mp3" id="F3s"></audio>
+		<audio src="./piano/G3.mp3" id="G3"></audio>
+		<audio src="./piano/G#3.mp3" id="G3s"></audio>
+		<audio src="./piano/A3.mp3" id="A3"></audio>
+		<audio src="./piano/A#3.mp3" id="A3s"></audio>
+		<audio src="./piano/B3.mp3" id="B3"></audio>
+		<audio src="./piano/C4.mp3" id="C4"></audio>
+		<audio src="./piano/C#4.mp3" id="C4s"></audio>
+		<audio src="./piano/D4.mp3" id="D4"></audio>
+		<audio src="./piano/D#4.mp3" id="D4s"></audio>
+		<audio src="./piano/E4.mp3" id="E4"></audio>
+		<script>
+			const keys = document.getElementsByClassName("keys");
+			const sharps = document.getElementsByClassName("sharps");
+
+			for (const key of keys) {
+				key.addEventListener("click", () => {
+					key.classList.add("playing");
+					const audio1 = document.querySelector(`audio#${key.id}`);
+					audio1.currentTime = 0;
+					audio1.play();
+				});
+				key.addEventListener("transitionend", () => {
+					key.classList.remove("playing");
+				});
+			}
+			for (const sharp of sharps) {
+				sharp.addEventListener("click", () => {
+					sharp.classList.add("playing");
+					const audio2 = document.querySelector(`audio#${sharp.id}`);
+					audio2.currentTime = 0;
+					audio2.play();
+				});
+				sharp.addEventListener("transitionend", () => {
+					sharp.classList.remove("playing");
+				});
+			}
+		</script>
+	</body>
+</html>
